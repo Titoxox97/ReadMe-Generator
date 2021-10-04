@@ -1,5 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let licBadge = {
     'Apache 2.0': function () {
@@ -27,9 +29,6 @@ function renderLicenseBadge(license) {
   return licBadge[license]();
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -68,9 +67,30 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return ` ${data.title} 
 
+  ${renderLicenseBadge(data.license)}
+  ## Contents
+  - [Summary](#summary)
+  - [Download](#download)
+  - [Usage](#usage)
+  - [Contributions](#contributions)
+  - [Testing](#testing)
+  - [Contact](#contact)
+  ## Download
+  📲 ${data.download}
+  ## Usage
+  🔬 ${data.usage}
+  ${renderLicenseSection(data.license)}
+  ## Contributions
+  📟 ${data.contributions}
+  ## Testing
+  🗳 ${data.testing}
+  ## Contact
+  🤓 I can be reached on my Github profile or by email
+  🐈 My GitHub profile: [${data.github-username}](https://github.com/${data.github-username})
+  📧 I can be contacted by email at: ${data.email}
+  🚭 README was created by ${data.contributions} using the [ReadMe-Generator](https://github.com/Titoxox97/ReadMe-Generator)
 `;
 }
-
 module.exports = generateMarkdown;
