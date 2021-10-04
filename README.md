@@ -1,6 +1,5 @@
   <header>ReadMe-Generator</header>
 
-undefined
 
 ## Contents
 
@@ -18,7 +17,6 @@ undefined
 ## Usage
 
 🔬 The project will be used by developers who want a quick and easy way to generate the README when working on their projects.
-undefined
 
 ## Contributions
 
