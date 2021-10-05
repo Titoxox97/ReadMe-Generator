@@ -39,8 +39,8 @@ const questions = [
         message: "Method of testing the project out?",
     },
     {
-        type: "input",
-        name: "licenses",
+        type: "list",
+        name: "license",
         message: "What are the different licenses used throughout?",
         choices: ["MIT", "cc", "apache-2.0", "bsl-1.0", "ISC", "Mozilla 2.0", "None"]
     },
@@ -66,7 +66,8 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then(response => {
+    inquirer.prompt(questions).then((response) => {
+        console.log(response)
         const rmInfo = generateMarkdown(response)
         return rmInfo
     })
